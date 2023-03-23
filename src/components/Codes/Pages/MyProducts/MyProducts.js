@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
 // import Loader from '../../../Loader/Loader';
 
@@ -9,19 +9,33 @@ const MyProducts = () => {
 
 
 
+	const [products, setProducts] = useState()
 
 
 
-	const url = `http://localhost:5000/products?email=${user?.email}`;
 
-	const { data: products } = useQuery({
-		queryKey: ['products', user?.email],
-		queryFn: async () => {
-			const res = await fetch(url);
-			const data = await res.json();
-			return data;
-		},
-	});
+	// const url = `http://localhost:5000/products?email=${user?.email}`;
+
+	// const { data: products } = useQuery({
+	// 	queryKey: ['products', user?.email],
+	// 	queryFn: async () => {
+	// 		const res = await fetch(url);
+	// 		const data = await res.json();
+	// 		return data;
+	// 	},
+	// });
+
+
+	useEffect(() => {
+		fetch(`http://localhost:5000/products?email=${user?.email}`)
+			.then((res) => res.json())
+			.then((result) => {
+				// console.log('logUserInner',result);
+				if(result !== undefined){
+					setProducts(result);
+				}
+			});
+	}, [user?.email]);
 
 	console.log(products);
 
@@ -71,7 +85,7 @@ const MyProducts = () => {
 							<img
 								src={product.image}
 								className='w-full h-[250px] lg:[350px]'
-								alt='Shoes'
+								alt='ProductImage'
 							/>
 						</figure>
 						<div className='card-body'>

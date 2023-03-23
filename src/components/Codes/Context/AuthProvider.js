@@ -23,14 +23,14 @@ const AuthProvider = ({ children }) => {
 		fetch(`http://localhost:5000/users/${user?.email}`)
 			.then((res) => res.json())
 			.then((result) => {
-				console.log('logUserInner',result);
+				// console.log('logUserInner',result);
 				if(result !== undefined){
-					setLogUser(result[1]);
+					setLogUser(result[0]);
 				}
 			});
 	}, [user?.email]);
 
-	console.log('logUser', logUser);
+	// console.log('logUser', logUser);
 
 	//! Create User....
 	const createSignUp = (email, password) => {

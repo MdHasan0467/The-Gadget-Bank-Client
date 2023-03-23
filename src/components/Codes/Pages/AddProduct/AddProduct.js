@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
-// import { AuthContext } from '../../../Context/AuthProvider';
+import { AuthContext } from '../../Context/AuthProvider';
 // import Loader from '../../../Loader/Loader';
 
 const AddProduct = () => {
-	// const { user, loading, logUser } = useContext(AuthContext);
+	const { user, loading, logUser } = useContext(AuthContext);
 	// console.log(logUser[0].permission);
 	const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -49,6 +49,9 @@ const AddProduct = () => {
 						description: data.description,
 						image: imgData.data.url,
 						time,
+						authorEmail: user?.email,
+						authorName: user?.displayName,
+						authorRole: logUser?.role,
 					};
 					console.log(addedProduct);
 

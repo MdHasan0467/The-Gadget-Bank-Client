@@ -84,36 +84,36 @@ const {user, logUser, logOut} = useContext(AuthContext)
 
 			<div className="Profile-Box dropdown dropdown-end">
 			<label tabIndex={0} className="btn btn-circle hover:bg-blue-500 hover:border hover:border-white border-white bg-white avatar">
-				<div className="w-10 rounded-full">
-					{user? 
-					<img src={user.photoURL} alt="avatar" />
-				:
-				<img src="https://t4.ftcdn.net/jpg/02/27/45/09/360_F_227450952_KQCMShHPOPebUXklULsKsROk5AvN6H1H.jpg" />}
-				
-				
-				</div>
-			</label>
-			<ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-				<li>
-				<a>
+			<div className="w-10 rounded-full">
 				{user? 
-					<Link to='/dashboard/my-profile' className="justify-between">
-					<span>{user?.displayName} </span>
-					<span className="badge">{logUser?.role}</span>
-					</Link>
+			<img src={user.photoURL} alt="avatar" />
+			:
+			<img src="https://t4.ftcdn.net/jpg/02/27/45/09/360_F_227450952_KQCMShHPOPebUXklULsKsROk5AvN6H1H.jpg" />}
+			</div>
+			</label>
+             
+			<ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+			<li>
+			<a>
+				{user? 
+				<Link to='/dashboard/my-profile' className="justify-between">
+				<span>{user?.displayName} </span>
+				<span className="badge">{logUser?.role}</span>
+				</Link>
 				:
 				<span>profile name</span>
 				}
 				
-				</a>
-				</li>
-				<li><a>Settings</a></li>
+			</a>
+			</li>
+			<li><a>Settings</a></li>
 				{user ?
 				<li><a onClick={handleLogOut}>Logout</a></li>
 				:
 				<li><Link to='/login'>Login</Link></li>
                 }
 			</ul>
+
 			</div>
 			
 		</div>
