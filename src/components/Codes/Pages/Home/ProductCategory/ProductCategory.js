@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { BsArrowRightShort, BsFillCartCheckFill, BsFillSuitHeartFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import AllCategoriesData from '../AllCategoriesData/AllCategoriesData';
 // import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 // import SelectCategory from '../../CategoryDetails/SelectCategory/SelectCategory';
 
@@ -269,23 +268,16 @@ const ProductCategory = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
             
-            
-
-            
-
-
-
-           
-
-    
+        
 
 
          {/* Desert Category */}     
          {getCategoryDellLaptop?.image && 
-          <div className="card h-[600px] hover:border hover:border-gray-300 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
+          <div className="card h-[600px] hover:border hover:border-gray-100 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
           <img className='w-full h-80' src={getCategoryDellLaptop?.image} alt="Desert" />
           <div className="card-body">
-              <h2 className="card-title flex justify-between"> <p>{getCategoryDellLaptop?.title}</p> <p className = 'text-purple-600'>${getCategoryDellLaptop?.resalePrice}</p></h2>
+          <p className="card-title flex justify-between">{getCategoryDellLaptop?.title}</p>
+              <p className='font-semibold text-fuchsia-500 text-2xl text-end'>( ${getCategoryDellLaptop?.resalePrice} )</p>
               <p>Category: {getCategoryDellLaptop?.category}</p>
               <p className='border p-2'>{getCategoryDellLaptop?.description}</p>
               
@@ -306,10 +298,11 @@ const ProductCategory = () => {
             
          {/* Chinese Category */}     
          {getCategoryAppleLaptop?.image && 
-          <div className="card h-[600px] hover:border hover:border-gray-300 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
+          <div className="card h-[600px] hover:border hover:border-gray-100 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
           <img className='w-full h-80' src={getCategoryAppleLaptop?.image} alt="Chinese" />
           <div className="card-body">
-              <h2 className="card-title flex justify-between"> <p>{getCategoryAppleLaptop?.title}</p> <p className = 'text-purple-600'>${getCategoryAppleLaptop?.resalePrice}</p></h2>
+          <p className="card-title flex justify-between">{getCategoryAppleLaptop?.title}</p>
+              <p className='font-semibold text-fuchsia-500 text-2xl text-end'>( ${getCategoryAppleLaptop?.resalePrice} )</p>
               <p>Category: {getCategoryAppleLaptop?.category}</p>
               <p className='border p-2'>{getCategoryAppleLaptop?.description}</p>
               
@@ -330,10 +323,11 @@ const ProductCategory = () => {
             
          {/* Chicken Category */}
          {getCategoryHPLaptop?.image &&      
-          <div className="card h-[600px] hover:border hover:border-gray-300 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
+          <div className="card h-[600px] hover:border hover:border-gray-100 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
           <img className='w-full h-80' src={getCategoryHPLaptop?.image} alt="Chicken" />
           <div className="card-body">
-              <h2 className="card-title flex justify-between"> <p>{getCategoryHPLaptop?.title}</p> <p className = 'text-purple-600'>${getCategoryHPLaptop?.resalePrice}</p></h2>
+              <p className="card-title flex justify-between">{getCategoryHPLaptop?.title}</p>
+              <p className='font-semibold text-fuchsia-500 text-2xl text-end'>( ${getCategoryHPLaptop?.resalePrice} )</p>
               <p>Category: {getCategoryHPLaptop?.category}</p>
               <p className='border p-2'>{getCategoryHPLaptop?.description}</p>
               
@@ -354,10 +348,11 @@ const ProductCategory = () => {
             
          {/* Rice Category */}      
          {getCategoryAsusLaptop?.image &&
-          <div className="card h-[600px] hover:border hover:border-gray-300 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
+          <div className="card h-[600px] hover:border hover:border-gray-100 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
           <img className='w-full h-80' src={getCategoryAsusLaptop?.image} alt="Rice" />
           <div className="card-body">
-              <h2 className="card-title flex justify-between"> <p>{getCategoryAsusLaptop?.title}</p> <p className = 'text-purple-600'>${getCategoryAsusLaptop?.resalePrice}</p></h2>
+          <p className="card-title flex justify-between">{getCategoryAsusLaptop?.title}</p>
+              <p className='font-semibold text-fuchsia-500 text-2xl text-end'>( ${getCategoryAsusLaptop?.resalePrice} )</p>
               <p>Category: {getCategoryAsusLaptop?.category}</p>
               <p className='border p-2'>{getCategoryAsusLaptop?.description}</p>
              
@@ -378,10 +373,11 @@ const ProductCategory = () => {
             
          {/* Drinks Category */}      
          {getCategorySamsungLaptop?.image &&
-          <div className="card h-[600px] hover:border hover:border-gray-300 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
+          <div className="card h-[600px] hover:border hover:border-gray-100 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
           <img className='w-full h-80' src={getCategorySamsungLaptop?.image} alt="Drink" />
           <div className="card-body">
-              <h2 className="card-title flex justify-between"> <p>{getCategorySamsungLaptop?.title}</p> <p className = 'text-purple-600'>${getCategorySamsungLaptop?.resalePrice}</p></h2>
+              <p className="card-title flex justify-between">{getCategorySamsungLaptop?.title}</p>
+              <p className='font-semibold text-fuchsia-500 text-2xl text-end'>( ${getCategorySamsungLaptop?.resalePrice} )</p>
               <p>Category: {getCategorySamsungLaptop?.category}</p>
               <p className='border p-2'>{getCategorySamsungLaptop?.description}</p>
               
@@ -408,11 +404,11 @@ const ProductCategory = () => {
 
          {/* Drinks Category */}      
          {getCategoryLenovoLaptop?.image &&
-          <div className="card h-[600px] hover:border hover:border-gray-300 rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
+          <div className="card h-[600px] hover:border-gray-100 border  rounded-none hover:bg-green-50 mx-5 group bg-base-100 shadow-xl">
           <img className='w-full h-80' src={getCategoryLenovoLaptop?.image} alt="Drink" />
           <div className="card-body">
-              <h2 className="card-title flex justify-between"> <p>{getCategoryLenovoLaptop?.title}</p> <p className = 'text-purple-600'>${getCategoryLenovoLaptop?.resalePrice}</p></h2>
-              <p>Category: {getCategoryLenovoLaptop?.category}</p>
+          <p className="card-title flex justify-between">{getCategoryLenovoLaptop?.title}</p>
+              <p className='font-semibold text-fuchsia-500 text-2xl text-end'>( ${getCategoryLenovoLaptop?.resalePrice} )</p>
               <p className='border p-2'>{getCategoryLenovoLaptop?.description}</p>
               
             <div className="card-actions justify-end">
@@ -434,7 +430,7 @@ const ProductCategory = () => {
         
 
 
-      <AllCategoriesData />
+
     
 
     </div>

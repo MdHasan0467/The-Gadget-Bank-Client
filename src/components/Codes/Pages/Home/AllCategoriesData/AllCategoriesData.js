@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { BsFillCartCheckFill, BsFillSuitHeartFill } from 'react-icons/bs';
+import { BsArrowRightShort, BsFillCartCheckFill, BsFillSuitHeartFill } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 
@@ -80,7 +80,7 @@ const AllCategoriesData = () => {
 
 
   const handleWishList = (id) => {
-    alert(id)
+    // alert(id)
 
     fetch(`http://localhost:5000/product/${id}`)
       .then((res) => res.json())
@@ -230,7 +230,7 @@ const AllCategoriesData = () => {
 
     return (
         <div>
-            <div className="mt-10">
+            <div className="my-10">
       
 
       {showAll ? (
@@ -259,10 +259,10 @@ const AllCategoriesData = () => {
               ))}
               </div>
             
-            <button className='btn btn-primary hidden md:block mx-auto w-sm mt-10' title='Hide categories data' onClick={handleCloseClick}>Close</button>  
+            <button className='hover:underline group text-blue-700 text-2xl flex mx-auto w-sm mt-10' title='Hide categories data' onClick={handleCloseClick}>Close <BsArrowRightShort className='group-hover:text-blue-700 text-white mt-2' /> </button>       
           </div>
         ) : (
-          <button className='btn btn-primary hidden md:block mx-auto w-sm mt-10' title='See all categories data' onClick={handleShowAllClick}>See All</button>
+          <button className='hover:underline group text-blue-700 text-2xl flex mx-auto w-sm mt-10' title='See all categories data' onClick={handleShowAllClick}>See All <BsArrowRightShort className='group-hover:text-blue-700 text-white mt-2' /> </button>
         )}
   
   

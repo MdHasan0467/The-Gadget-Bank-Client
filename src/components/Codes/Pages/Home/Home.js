@@ -1,6 +1,7 @@
 import React from 'react';
 import BannerAd from '../../Extra/BannerAd/BannerAd';
 import Hero from '../../Extra/Hero/Hero';
+import AllCategoriesData from './AllCategoriesData/AllCategoriesData';
 import ProductCategory from './ProductCategory/ProductCategory';
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
             <Hero />
             <BannerAd />
             <ProductCategory />
-           
+            <AllCategoriesData />
         </div>
     );
 };

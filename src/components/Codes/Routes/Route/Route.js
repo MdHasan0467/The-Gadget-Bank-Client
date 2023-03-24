@@ -5,6 +5,7 @@ import Main from '../../Layouts/Main/Main';
 import About from '../../Pages/About/About';
 import AddProduct from '../../Pages/AddProduct/AddProduct';
 import AllBuyers from '../../Pages/AllBuyers/AllBuyers';
+import AllSeller from '../../Pages/AllSeller/AllSeller';
 import FAQ from '../../Pages/FAQ/FAQ';
 import Login from '../../Pages/Form/Login/Login';
 import Signup from '../../Pages/Form/Signup/Signup';
@@ -99,6 +100,13 @@ const Route = () => {
                     {
                         path: '/dashboard/All-Buyers',
                         element: <AllBuyers />
+                    },
+
+
+
+                    {
+                        path: '/dashboard/All-Sellers',
+                        element: <AllSeller />
                     },
 
 

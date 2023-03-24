@@ -27,6 +27,8 @@ console.log('data', getData);
         // Make a request for data with a given ID
 
 
+        
+
         useEffect(() => {
             axios
               .get(`http://localhost:5000/products/${gettingData[0]?.category}`)
@@ -193,8 +195,14 @@ console.log('data', getData);
 
 
                 <div className="card-actions justify-end">
-                <button onClick={() => handleOrder(data?._id)}  className='flex  bg-fuchsia-500 hover:bg-green-500 border-0 btn w-full md:w-auto '> <span className='w-auto my-auto mx-2'><BsFillCartCheckFill/></span> <span>Buy Now</span></button>
-                <button onClick={() => handleWishList(data?._id)}  className='flex  bg-violet-500 hover:bg-green-500 border-0 btn w-full md:w-auto'><span className='w-auto my-auto mx-2'><BsFillSuitHeartFill/></span> <span>Add to wish</span></button>
+
+                <button onClick={() => handleOrder(data?._id)}  className='flex  bg-fuchsia-500 hover:bg-green-500 border-0 btn w-full md:w-auto '>
+                   <span className='w-auto my-auto mx-2'><BsFillCartCheckFill/></span> <span>Buy Now</span>
+                </button>
+
+                <button onClick={() => handleWishList(data?._id)}  className='flex  bg-violet-500 hover:bg-green-500 border-0 btn w-full md:w-auto'>
+                  <span className='w-auto my-auto mx-2'><BsFillSuitHeartFill/></span> <span>Add to wish</span>
+                </button>
               </div>
 
 

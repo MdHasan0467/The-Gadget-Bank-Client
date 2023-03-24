@@ -129,9 +129,6 @@ const AllBuyers = () => {
 									<td className='hidden md:flex'>
 										{buyer.role}
 										
-										<span className='badge badge-ghost badge-sm bg-green-200 m-1 py-3'>
-											Verified
-										</span>
 									</td>
 
 									<th>

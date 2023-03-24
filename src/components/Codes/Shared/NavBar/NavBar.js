@@ -61,9 +61,9 @@ const {user, logUser, logOut} = useContext(AuthContext)
 		<div>
             <div className="navbar bg-base-100">
 
-			<div className="flex-1 ml-5">
+			<Link to='/' className="flex-1 ml-5">
 			<img className=' h-16' src={logo} alt="logo" />
-		    </div>
+		    </Link>
 
 
              {/* For Mobile */}
@@ -87,16 +87,8 @@ const {user, logUser, logOut} = useContext(AuthContext)
 			{user&&
 			<li><Link to='/dashboard'>Dashboard</Link></li>
 			}
-			<li tabIndex={0}>
-				<Link>
-				More
-				<svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-				</Link>
-				<ul className="p-2">
-				<li><Link to='/faq'>FAQ</Link></li>
+			<li><Link to='/faq'>FAQ</Link></li>
 				<li><Link to='/about'>About</Link></li>
-				</ul>
-			</li>
 			
 			</ul>
 		   </div>

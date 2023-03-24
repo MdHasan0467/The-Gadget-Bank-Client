@@ -55,7 +55,7 @@ const Dashboard = () => {
 									<Link to='/dashboard/my-products'>My Products</Link>
 								</li>
 								<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-purple-600 border-gray-300 border-l-purple-600'>
-									<Link to='/dashboard/mybuyers'>My Buyers</Link>
+									<Link to='/dashboard/my-buyers'>My Buyers</Link>
 								</li>
 							</>
 							}
@@ -77,15 +77,19 @@ const Dashboard = () => {
 						
 						{logUser?.role === 'admin' &&
 							<>
+							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-orange-600 border-gray-300 border-l-orange-600'>
+									<Link to='/dashboard/my-products'>My Products</Link>
+							</li>
 							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-blue-600 border-gray-300 border-l-blue-600'>
 								<Link to='/dashboard/All-Buyers'>All Buyers</Link>
 							</li>
+							
 							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-purple-600 border-gray-300 border-l-purple-600'>
-								<Link to='/dashboard/allSeller'>All Sellers</Link>
+								<Link to='/dashboard/All-Sellers'>All Sellers</Link>
 							</li>
-							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-pink-600 border-gray-300 border-l-pink-600'>
+							{/* <li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-pink-600 border-gray-300 border-l-pink-600'>
 								<Link to='/dashboard/createUser'>Create an User</Link>
-							</li>
+							</li> */}
 						</>
 						}
 						

@@ -1,9 +1,14 @@
 import React from 'react';
 
 const DeleteModal = ({closeModal, deletingUser, successAction, image, name, email}) => {
-    // console.log('modal',image, name, email);
-    // const { photoURL, name, email } = modalData;
+ 
+
+	
     console.log('deletingUser', deletingUser);
+
+
+
+
 	return (
 		<div>
 			<input type='checkbox' id='confirmation-modal' className='modal-toggle' />
