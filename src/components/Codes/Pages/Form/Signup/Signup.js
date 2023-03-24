@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Context/AuthProvider';
 const Signup = () => {
     
   //todo: Context APIs Data
-  const { user, createSignUp, userprofile, loading, googleSignUp } = useContext(AuthContext);
+  const { logOut, createSignUp, userprofile, loading, googleSignUp } = useContext(AuthContext);
 
 
 
@@ -33,6 +33,7 @@ const Signup = () => {
   
   
       //! from .env.local file====>
+
       const imgHostKey = process.env.REACT_APP_Imgbb_key;
       // console.log(imgHostKey);
     
@@ -70,7 +71,7 @@ const Signup = () => {
     createSignUp(email, password)
       .then(result => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
   
 
 
@@ -86,6 +87,10 @@ const Signup = () => {
         //! ==========< Image Hosting >==========
   
         const formData = new FormData()
+
+
+
+
       
         formData.append('image', image[0])
   
@@ -98,15 +103,15 @@ const Signup = () => {
         })
           .then((res) => res.json())
           .then((imgData) => {
-            console.log(imgData);
+            // console.log(imgData);
 
             const photoURL = imgData.data.url
 
             updateUserDetails(name, photoURL);
-            saveUsers(name, email,  photoURL);
+          
 
             if (imgData.success) {
-                console.log(imgData.data.url)
+                // console.log(imgData.data.url)
   
   
   
@@ -117,7 +122,7 @@ const Signup = () => {
                 name,
                 email,
                 password,
-				role,
+			        	role,
                 phoneNumber,
                 image: imgData.data.url
               }
@@ -145,6 +150,7 @@ const Signup = () => {
                 .then((result) => {
                   console.log(result);
   
+				  logOut()
   
                   navigate('/login')
                   toast.success('Registration successful')
@@ -160,7 +166,7 @@ const Signup = () => {
       })
       .catch((error) => {
         console.error(error);
-        // setPasswordError((error.message).slice(22,36));
+        
         if (error) {
           toast.error((error.message).slice(22, 42));
         }
@@ -179,23 +185,7 @@ const Signup = () => {
           });
       };
     
-      const saveUsers = (name, email,  photoURL) => {
-        const user = { name, email,  photoURL };
-        fetch('http://localhost:5000/users', {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(user),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            navigate('/');
-            // setCreatedUserEmail(email);
-          });
-      };
-
+     
 
 
 
@@ -224,7 +214,7 @@ const Signup = () => {
       
       
               //! Save User info to the database....
-                fetch('https://smart-thrill-social-media-server.vercel.app/users', {
+                fetch('http://localhost:5000/users', {
                   method: 'POST',
                   headers: {
                     'content-type': 'application/json',
@@ -254,7 +244,11 @@ const Signup = () => {
 	// if (loading) {
 	// 	return <Loader></Loader>;
 	// }
-	console.log(user);
+
+
+
+
+
 	return (
 		<div>
         <div className="w-full mx-auto shadow-2xl md:shadow-none bg-base-100 max-w-md md:max-w-full p-8 space-y-3 rounded-xl">

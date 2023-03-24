@@ -4,19 +4,27 @@ import toast, { Toaster } from 'react-hot-toast';
 import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
-// import { AuthContext } from '../../Context/AuthProvider';
 // import useToken from '../../../hook/useToken';
 
 const Login = () => {
-	const {
-		register,
-		formState: { errors },
-		handleSubmit,
-	} = useForm();
+	const { register, formState: { errors }, handleSubmit } = useForm();
+
+
+
 	const { logIn, googleSignUp, loading } = useContext(AuthContext);
+
+
+
 	const [loginError, setLoginError] = useState('');
+
+
 	const location = useLocation();
+
+
 	const navigate = useNavigate();
+
+
+
 	const [loginUserEmail, setLoginUserEmail] = useState('');
 	// const [token] = useToken(loginUserEmail);
 
@@ -29,6 +37,10 @@ const Login = () => {
   //todo: Password show and hide
   const [changePassword, setChangePassword] = useState(true);
   const changeIcon = changePassword === true ? false : true;
+
+
+
+
 
 
 
@@ -89,7 +101,7 @@ const Login = () => {
 				const user = result.user;
 				toast.success(user?.email);
 
-				fetch('https://car-house-server-omega.vercel.app/googlebuyer', {
+				fetch('http://localhost:5000/googlebuyer', {
 					method: 'POST',
 					headers: {
 						'content-type': 'application/json',

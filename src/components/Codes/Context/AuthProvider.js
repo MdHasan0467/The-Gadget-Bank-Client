@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
 			});
 	}, [user?.email]);
 
-	// console.log('logUser', logUser);
+	console.log('logUser', logUser);
 
 	//! Create User....
 	const createSignUp = (email, password) => {

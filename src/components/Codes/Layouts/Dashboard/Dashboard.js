@@ -66,7 +66,7 @@ const Dashboard = () => {
 								<Link to='/dashboard/myOrders'>My Orders</Link>
 							</li>
 							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-orange-600 border-gray-300 border-l-orange-600'>
-								<Link to='/dashboard/myWishList'>My WhishList</Link>
+								<Link to='/dashboard/my-wish-list'>My WhishList</Link>
 							</li>
 						</>
 						}

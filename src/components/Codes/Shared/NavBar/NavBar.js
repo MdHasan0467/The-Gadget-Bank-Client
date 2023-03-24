@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../../Assets/Black_ColorLogo-removebg.png'
@@ -25,6 +26,34 @@ const {user, logUser, logOut} = useContext(AuthContext)
 			})
 			.catch((error) => console.error(error));
 	}
+
+
+
+	//! For Searching product
+
+	const [products, setProducts] = useState([]);
+	const [searchTerm, setSearchTerm] = useState('');
+
+  console.log('products', products);
+  
+
+	useEffect(() => {
+	  
+		fetch( `http://localhost:5000/products/search?name=${searchTerm}`)
+		.then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+		setProducts(result.data);
+	  })
+
+	}, [searchTerm]);
+  
+	const handleSearch = (event) => {
+	  setSearchTerm(event.target.value);
+	//   console.log(event.target.value);
+	};
+
+	//! END 
 
 
 
@@ -77,7 +106,7 @@ const {user, logUser, logOut} = useContext(AuthContext)
 
 		<div className="flex-none gap-2">
 			<form className=" flex">
-			<input type="text" placeholder="Search" className="input input-bordered outline-none focus:outline-none rounded-none" />
+			<input type="text" onChange={handleSearch} value={searchTerm} placeholder="Search" className="input input-bordered outline-none focus:outline-none rounded-none" />
 			<button className='btn btn-primary rounded-none' type="submit">Search</button>
 			</form>
 
