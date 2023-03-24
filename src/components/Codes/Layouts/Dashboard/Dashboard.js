@@ -7,8 +7,10 @@ import { AuthContext } from '../../Context/AuthProvider';
 const Dashboard = () => {
 	const {user, logUser} = useContext(AuthContext)
     return (
-        <div>
-            <NavBar />
+        <div className=''>
+            <div className="">
+			<NavBar />
+			</div>
             <div className='drawer drawer-mobile'>
 				<input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
 				<div className='drawer-content'>
@@ -63,7 +65,7 @@ const Dashboard = () => {
 						{logUser?.role === 'Buyer' &&
 							<>
 							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-blue-600 border-gray-300 border-l-blue-600 '>
-								<Link to='/dashboard/myOrders'>My Orders</Link>
+								<Link to='/dashboard/my-orders'>My Orders</Link>
 							</li>
 							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-orange-600 border-gray-300 border-l-orange-600'>
 								<Link to='/dashboard/my-wish-list'>My WhishList</Link>
@@ -76,7 +78,7 @@ const Dashboard = () => {
 						{logUser?.role === 'admin' &&
 							<>
 							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-blue-600 border-gray-300 border-l-blue-600'>
-								<Link to='/dashboard/allBuyers'>All Buyers</Link>
+								<Link to='/dashboard/All-Buyers'>All Buyers</Link>
 							</li>
 							<li className=' hover:text-white  my-2 border-l-4 hover:border-l-8 border  hover:bg-purple-600 border-gray-300 border-l-purple-600'>
 								<Link to='/dashboard/allSeller'>All Sellers</Link>

@@ -100,6 +100,78 @@ console.log('data', getData);
 
 
 
+  
+  //! handleOrder
+
+  const handleOrder = (id) => {
+    
+
+
+    //* Make a request for data with a given ID
+   
+      axios
+        .get(`http://localhost:5000/product/${id}`)
+        .then((data) => {
+          console.log(data)
+
+          if (data.data !== undefined) {
+            console.log(data.data);
+            // setWishData(data.data);
+
+
+
+            const addedOrder = {
+              ordererName : user?.displayName,
+              ordererEmail: user?.email,
+              authorEmail:data?.data?.authorEmail,
+              authorName:data?.data?.authorName,
+              productImage : data.data.image,
+              title : data.data.title,
+              resalePrice : data.data.resalePrice,
+              category : data.data.category,
+              description: data.data.description,
+              postedTime : data.data.time,
+              yearOfPurchase : data.data.yearOfPurchase,
+              yearsOfUse : data.data.yearsOfUse,
+              location : data.data.location,
+              originalPrice : data.data.originalPrice,
+            }
+
+
+
+
+      //* Data post 
+
+      fetch('http://localhost:5000/order-product', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(addedOrder),
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          navigate('/dashboard/my-orders')
+          toast.success(`Successfully added your new order ${data.data.title}`);
+        });
+          }
+          
+        });
+   
+
+    
+    
+        }
+  
+
+
+
+
+
+
+
+
+
 
 
     return (
@@ -121,7 +193,7 @@ console.log('data', getData);
 
 
                 <div className="card-actions justify-end">
-                <button  className='flex  bg-fuchsia-500 hover:bg-green-500 border-0 btn w-full md:w-auto '> <span className='w-auto my-auto mx-2'><BsFillCartCheckFill/></span> <span>Buy Now</span></button>
+                <button onClick={() => handleOrder(data?._id)}  className='flex  bg-fuchsia-500 hover:bg-green-500 border-0 btn w-full md:w-auto '> <span className='w-auto my-auto mx-2'><BsFillCartCheckFill/></span> <span>Buy Now</span></button>
                 <button onClick={() => handleWishList(data?._id)}  className='flex  bg-violet-500 hover:bg-green-500 border-0 btn w-full md:w-auto'><span className='w-auto my-auto mx-2'><BsFillSuitHeartFill/></span> <span>Add to wish</span></button>
               </div>
 

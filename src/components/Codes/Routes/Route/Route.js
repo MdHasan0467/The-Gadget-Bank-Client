@@ -4,10 +4,12 @@ import Dashboard from '../../Layouts/Dashboard/Dashboard';
 import Main from '../../Layouts/Main/Main';
 import About from '../../Pages/About/About';
 import AddProduct from '../../Pages/AddProduct/AddProduct';
+import AllBuyers from '../../Pages/AllBuyers/AllBuyers';
 import FAQ from '../../Pages/FAQ/FAQ';
 import Login from '../../Pages/Form/Login/Login';
 import Signup from '../../Pages/Form/Signup/Signup';
 import Home from '../../Pages/Home/Home';
+import MyOrders from '../../Pages/MyOrders/MyOrders';
 import MyProducts from '../../Pages/MyProducts/MyProducts';
 import MyProfile from '../../Pages/MyProfile/MyProfile';
 import MyWishList from '../../Pages/MyWishList/MyWishList';
@@ -86,6 +88,19 @@ const Route = () => {
                         path: '/dashboard/my-wish-list',
                         element: <MyWishList />
                     },
+
+
+                    {
+                        path: '/dashboard/my-orders',
+                        element: <MyOrders />
+                    },
+
+
+                    {
+                        path: '/dashboard/All-Buyers',
+                        element: <AllBuyers />
+                    },
+
 
 
                 ]
